@@ -1,4 +1,4 @@
-import { cronToHuman } from "../src/main";
+import { cronToHuman } from "../src/cron";
 
 test("test cron to human", async () => {
   expect(cronToHuman("* * * * *")).toEqual(
