@@ -1,5 +1,5 @@
 {
-  "name": "sturdy-broccoli",
+  "name": "@fwilhe2/sturdy-broccoli",
   "version": "1.0.0",
   "description": "cron parser",
   "main": "lib/main.js",
@@ -34,5 +34,8 @@
     "typescript": "^4.0.2",
     "@types/jest": "^26.0.14"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/fwilhe2"
+  }
 }
