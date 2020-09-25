@@ -1,6 +1,6 @@
 import { cronToHuman } from "../src/main";
 
-test("aa", async () => {
+test("test cron to human", async () => {
   expect(cronToHuman("* * * * *")).toEqual(
     "every minute every hour every day of the month every month every weekday "
   );
