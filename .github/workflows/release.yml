@@ -13,8 +13,12 @@ jobs:
       - name: Get Version Number
         id: version
         run: |
+          set -x
           npm install semver --quiet
-          LATEST=$(curl --silent "https://api.github.com/repos/$GITHUB_REPOSITORY/releases/latest" | jq -r .tag_name)
+          curl --silent "https://api.github.com/repos/$GITHUB_REPOSITORY/releases/latest" > latest.txt
+          cat latest.txt
+          LATEST=$(cat latest.txt | jq -r .tag_name)
+          echo $LATEST
           [[ -z "$LATEST" ]] && { echo "Could not get latest version" ; exit 1; }
           echo "::set-output name=number::$(node_modules/.bin/semver -i minor $LATEST)"
       - name: Create Release
