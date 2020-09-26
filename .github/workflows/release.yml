@@ -31,3 +31,8 @@ jobs:
           release_name: Release ${{ steps.version.outputs.number }}
           draft: false
           prerelease: false
+      - run: |
+          npm version --no-git-tag-version ${{ steps.version.outputs.number }}
+          npm install -g npm-cli-login
+          npm-cli-login -u fwilhe2 -p ${{ secrets.PAT_NPM }} -e fwilhelm.wgt+github@gmail.com -r https://npm.pkg.github.com
+          npm publish
