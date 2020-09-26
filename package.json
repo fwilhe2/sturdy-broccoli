@@ -1,6 +1,6 @@
 {
   "name": "@fwilhe2/sturdy-broccoli",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "cron parser",
   "main": "lib/main.js",
   "scripts": {
